@@ -6,7 +6,7 @@ internal class Button : Control
 {
     private int _fontHandle;
     private const int radius = 4;
-    private const float edgeSize = 1.2f;
+    private const float edgeSize = 1.3f;
     private double opacityCounter;
     private double opacity;
     private double clickOpacityCounter;

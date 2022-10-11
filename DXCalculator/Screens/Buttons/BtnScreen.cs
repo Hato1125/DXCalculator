@@ -15,7 +15,8 @@ internal class BtnScreen
     {
         "0", "1", "2", "3", "4", "5",
         "6", "7", "8", "9", "+", "-",
-        "x", "÷", "%", "=", ".", "+/-"
+        "x", "÷", "%", "=", ".", "c",
+        "x²" ,"+/-"
     };
 
     public void Init()
@@ -46,6 +47,8 @@ internal class BtnScreen
             { "%", new GUI.Button(0, 0, fontName, fontSize, fontThick) },
             { "=", new GUI.Button(0, 0, fontName, fontSize, fontThick) },
             { ".", new GUI.Button(0, 0, fontName, fontSize, fontThick) },
+            { "c", new GUI.Button(0, 0, fontName, fontSize, fontThick) },
+            { "x2", new GUI.Button(0, 0, fontName, fontSize, fontThick) },
             { "+/-", new GUI.Button(0, 0, fontName, fontSize, fontThick) },
         };
 
@@ -62,6 +65,10 @@ internal class BtnScreen
 
         // 並べる
         var childs = panel.ChildControl;
+        childs.Add(Buttons["%"]);
+        childs.Add(Buttons["c"]);
+        childs.Add(Buttons["x2"]);
+        childs.Add(Buttons["/"]);
         childs.Add(Buttons["7"]);
         childs.Add(Buttons["8"]);
         childs.Add(Buttons["9"]);
@@ -121,7 +128,7 @@ internal class BtnScreen
         {
             // NOTE: 1は誤差
             int cWidth = (panel.Size.Width / 4) - Padding + 1;
-            int cHeight = (panel.Size.Height / 4) - Padding + 1;
+            int cHeight = (panel.Size.Height / 5) - Padding + 1;
 
             childs[i].Build(cWidth, cHeight);
 
