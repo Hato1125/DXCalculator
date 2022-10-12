@@ -6,7 +6,7 @@ internal class Button : Control
 {
     private int _fontHandle;
     private const int radius = 4;
-    private const float edgeSize = 1.3f;
+    private const float edgeSize = 1.0f;
     private double opacityCounter;
     private double opacity;
     private double clickOpacityCounter;
@@ -82,14 +82,14 @@ internal class Button : Control
 
         if (IsClicking())
         {
-            clickOpacityCounter += AppMain.time.TotalSeconds * 1100;
+            clickOpacityCounter += AppMain.time.TotalSeconds * 1090;
 
             if (clickOpacityCounter > 90)
                 clickOpacityCounter = 90;
         }
         else
         {
-            clickOpacityCounter -= AppMain.time.TotalSeconds * 1100;
+            clickOpacityCounter -= AppMain.time.TotalSeconds * 1090;
 
             if (clickOpacityCounter < 0)
                 clickOpacityCounter = 0;
@@ -117,7 +117,7 @@ internal class Button : Control
     private void DrawEdge(int width, int height)
     {
         uint edgeColor = DX.GetColor(EdgeColor.R, EdgeColor.G, EdgeColor.B);
-        DX.DrawRoundRectAA(edgeSize, edgeSize, width - edgeSize, height - 1.5f, radius + 1.5f, radius + edgeSize, byte.MaxValue, edgeColor, DX.FALSE, edgeSize);
+        DX.DrawRoundRectAA(edgeSize, edgeSize, width - edgeSize, height - edgeSize, radius + 1.5f, radius + 1.5f, byte.MaxValue, edgeColor, DX.FALSE, edgeSize);
     }
 
     private void DrawText(string text)

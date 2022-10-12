@@ -7,10 +7,10 @@ namespace DXCalculator;
 
 internal class BtnScreen
 {
-    private const int Padding = 3;
+    private const int Padding = 1;
 
     private GUI.Panel? panel = null;
-    private Dictionary<string, GUI.Button>? Buttons = null;
+    public Dictionary<string, GUI.Button>? Buttons = null;
     private string[] texts =
     {
         "0", "1", "2", "3", "4", "5",
@@ -22,8 +22,8 @@ internal class BtnScreen
     public void Init()
     {
         const string fontName = "Yu Gothic UI";
-        const int fontSize = 28;
-        const int fontThick = 6;
+        const int fontSize = 19;
+        const int fontThick = 8;
 
         panel = new(400, 200);
         panel.Opacity = 0;
@@ -55,8 +55,8 @@ internal class BtnScreen
         int index = 0;
         foreach(var item in Buttons)
         {
-            item.Value.BackColor = Color.FromArgb(39, 39, 44);
-            item.Value.EdgeColor = Color.FromArgb(45, 45, 50);
+            item.Value.BackColor = Color.FromArgb(39, 39, 46);
+            item.Value.EdgeColor = Color.FromArgb(46, 46, 53);
             item.Value.ForeColor = Color.White;
             item.Value.Text = texts[index];
 
@@ -139,8 +139,6 @@ internal class BtnScreen
             int addX = ((cWidth * 4) + (4 * Padding)) * heightCount;
             int x = (cWidth * i) + (i * Padding) - addX;
             int y = (cHeight * heightCount) + (heightCount * Padding);
-
-            Debug.WriteLine(addX);
 
             childs[i].Position = (
                 x, y

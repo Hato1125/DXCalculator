@@ -32,7 +32,7 @@ internal class AppMain
         DX.DxLib_Init();
         DX.SetDrawScreen(DX.DX_SCREEN_BACK);
         titleBar.InitTitleBar();
-        BackColor = Windows.UI.Color.FromArgb(255, 30, 30, 35);
+        BackColor = Windows.UI.Color.FromArgb(255, 30, 30, 38);
         titleBar.SetTitleBarColor(BackColor);
         titleBar._mainWindow.ResizeClient(new SizeInt32(400, 800));
         DX.SetBackgroundColor(BackColor.R, BackColor.G, BackColor.B);
